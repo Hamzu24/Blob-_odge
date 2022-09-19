@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<div id="main"></div>
+
+    <center>
+
+<button onclick="start()" id="stb">Ready</button>
+
+    </center>
+
+<p id="colorpara">Choose your color!</p>
+
+    <img src="http://piskel-imgstore-b.appspot.com/img/304927b3-1633-11e7-9c16-27e9524d85c7.gif" id="arrow"></img>
+
+    <img src="http://piskel-imgstore-b.appspot.com/img/86726e97-1633-11e7-af42-27e9524d85c7.gif" id="back"></img>
+
+<p id="colorname">red</p>
+
+<div id="enemy1"></div>
+
+<div id="enemy2"></div>
+
+<div id="enemy3"></div>
+
+<div id="enemy4"></div>
+
+<div id="enemy5"></div>
+
+<div id="enemy6"></div>
+
+<div id="enemy7"></div>
+
+
+
+<p id="pointpara">Points:</p>
+
+<p id="pointsnumb">0</p>
+
+<p id="livespara">Lives:</p>
+
+<p id="livesnumb">3</p>
+
+<button id="emb" onclick="easyModule()">Easy Mode: Off</button>
+
+<img src="https://vignette4.wikia.nocookie.net/cloudywithachanceofmeatballs/images/c/cd/Warning_sign.png/revision/latest?cb=20140228025438" id="warningSign"></img>
+
+<table id="heart" width='200px' height='200px' cellspacing='0' cellpadding='0'><tr><td style='background-color:rgb(255, 255, 1);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(255, 255, 1);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(255, 1, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(1, 255, 1);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(132, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td></tr><tr><td style='background-color:rgb(255, 255, 1);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(1, 1, 255);'></td><td style='background-color:rgb(255, 255, 1);'></td></tr></table>
+</body>
+
+<style>
+
+  #main {
+
+        width: 100px;
+
+        height: 100px;
+
+        background-color: red;
+
+        -moz-border-radius: 50px;
+
+        -webkit-border-radius: 50px;
+
+        border-radius: 50px;
+
+        position: absolute;
+
+        left: 45%;
+
+        top: 45%;
+
+    }
+
+    #stb {
+
+        width: 100px;
+
+        height: 40px;
+
+        background-color: aquamarine;
+
+        color: darkgoldenrod;
+
+    }
+
+    #colorpara {
+
+        color: chocolate;
+
+        left: 44%;
+
+        top: 39%;
+
+        position: absolute;
+
+        height: 25px;
+
+    }
+
+    #arrow {
+
+        position: absolute;
+
+        width: 900px;
+
+        height: 350px;
+
+        left: 53%;
+
+        top: 0%;
+
+    }
+
+    #back {
+
+        position: absolute;
+
+        width: 900px;
+
+        height: 350px;
+
+        left: -25.5%;
+
+        top: -3%;
+
+    }
+
+ 
+
+  #enemy1 {
+
+        width: 50px;
+
+        height: 50px;
+
+        background-color: floralwhite;
+
+        position: absolute;
+
+        left: 50%;
+
+    }
+
+ 
+
+    #colorname {
+
+        color: red;
+
+        top:62%;
+
+        left: 48%;
+
+        position: absolute;
+
+    }
+
+ 
+
+    #pointpara {
+
+        color: green;
+
+        left: 3%;
+
+        top: 3%;
+
+    }
+
+ 
+
+    #pointsnumb {
+
+        color: green;
+
+        left: 5%;
+
+        top: 3%;
+
+    }
+
+ 
+
+    #pointsnumb {
+
+    color: green;
+
+    left: 5%;
+
+    top: 3%;
+
+    }
+
+ 
+
+    #enemy2 {
+
+        width: 50px;
+
+        height: 50px;
+
+        background-color: floralwhite;
+
+        position: absolute;
+
+        left: 60%;       
+
+    }
+
+ 
+
+    #enemy3 {
+
+        width: 50px;
+
+        height: 50px;
+
+        background-color: floralwhite;
+
+        position: absolute;
+
+        left: 70%;       
+
+    }
+
+ 
+
+    #enemy4 {
+
+        width: 50px;
+
+        height: 50px;
+
+        background-color: floralwhite;
+
+        position: absolute;
+
+        left: 70%;      
+
+    }
+
+ 
+
+    #enemy5 {
+
+        width: 75px;
+
+        height: 75px;
+
+        background-color: floralwhite;
+
+        position: absolute;
+
+        left: 70%;    
+
+    }
+
+    
+
+    #enemy6 {
+
+        width: 50px;
+
+        height: 50px;
+
+        background-color: green;
+
+        position: absolute;
+
+        left: 30%;      
+
+    }
+
+    
+
+    #warningSign {
+
+        position: absolute;
+
+        height: 75px;
+
+        width: 90px;
+
+    }
+
+ 
+
+  #livespara {
+
+  color: aqua;
+
+  }
+
+  
+
+  #livesnumb {
+
+  color: aqua;
+
+  }
+
+  
+
+  #emb {
+
+-moz-border-radius: 50px;
+
+    -webkit-border-radius: 50px;
+
+    border-radius: 50px;
+
+background-color: Gray;
+
+color: yellow;
+
+  }
+
+  
+
+    body {
+
+        background-image: url("https://media1.britannica.com/eb-media/48/191948-131-BDB35461.jpg");
+background-size: 100%, 100%;
+
+    }
+
+    
+
+    #enemy7 {
+
+        width: 80px;
+
+        height: 80px;
+
+        background-color: darkslategray;
+
+        position: absolute;
+
+        left: 30%;  
+
+    }
+#heart {
+position: absolute;
+height: 50px;
+width: 50px;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+$("#emb").offset({left: $('#emb').offset().top, top: $(document).width() / 2});
+
+    $('#enemy1').hide();
+
+    $('#enemy2').hide();
+
+    $('#enemy3').hide();
+
+    $('#enemy4').hide();
+
+    $('#enemy5').hide();
+
+    $('#enemy6').hide();
+
+    $('#enemy7').hide();
+$('#heart').hide();
+
+    $('#pointpara').hide();
+
+    $('#pointsnumb').hide();
+
+    $('#warningSign').hide();
+
+    $('#miniboss1').hide();
+
+    $('#miniboss2').hide();
+
+  
+
+  $('#livespara').hide();
+
+  
+
+  $('#livesnumb').hide();
+
+    var enemy1AttackPos = Random(2, 98);
+
+    var enemy2AttackPos = Random(2, 98);
+
+    var enemy3AttackPos = Random(2, 98);
+
+    var enemy4AttackPos = Random(2, 98);
+
+    var enemy6AttackPos = Random(2, 98);
+
+    var enemy6AttackInterval = Random(1000, 3000);
+
+    var enemy7AttackPos = Random(2, 98);
+
+    var enemy7AttackInterval = Random(1000, 3000);
+var heartAttackPos = Random(2, 98);
+
+    var mainpos = $('#main').offset();
+
+    var enemypos = $('#enemy1').offset();
+
+    var mainleft = mainpos.left;
+
+    var maintop = mainpos.top;
+
+    var enemy1left = enemypos.left;
+
+    var enemy1top = enemypos.top;
+
+    var maintype = 0;
+
+    var stg = 0;
+
+    var key = 0;
+
+    var arrayNumber = 0;
+
+    var points = 0;
+
+    var dead = 0;
+
+    var easymode = 0;
+
+    var speed3 = 3500;
+
+    var boss = 0;
+
+    var boss_started = 0;
+var heartpos = $('#heart').offset();
+var heartleft = heartpos.left;
+var hearttop = heartpos.top;
+
+  
+
+ var lives = 3;
+
+  
+
+ var facing = 0;
+
+ 
+
+ var speed = 3000;
+
+ 
+
+ var speed2 = 3000;
+
+    
+
+var speed4 = 1500;
+
+ 
+
+ var bJumping = false;
+
+ 
+
+
+
+
+      function Random(min, max) {
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+
+}
+
+ 
+
+function easyModule() {
+
+if (easymode === 1) {
+
+console.log('Oh hell no...');
+
+easymode = 0;
+
+$("#emb").html('Easy Mode: Off');
+
+} else if (easymode === 0){
+
+easymode = 1;
+
+$("#emb").html('Easy Mode: On');
+
+}
+
+}
+
+
+
+
+    function enemyMove() {
+
+ 
+
+  setTimeout(function() {
+
+      if (boss === 0) {
+
+        enemy1AttackPos = Random(2, 98);
+
+        $('#enemy1').show();
+
+        $('#enemy1').css('top', '0');
+
+        $('#enemy1').css('left', enemy1AttackPos.toString() + '%');
+
+        $('#enemy1').show();
+
+        $('#enemy1').animate({'top' : '+=' + ($(document).height() - $("#enemy1").height()).toString() + 'px'}, speed);
+
+ 
+
+
+
+
+    setTimeout(function() {
+
+    $('#enemy1').hide();
+
+    }, speed + 10);
+
+      }
+
+    setTimeout(function() {
+
+            enemyMove();
+
+    }, 3000 + Random(500, 2000));
+
+ 
+
+ }, 100 + Random(100, 300));
+
+    }
+
+   
+
+        function enemy2Move() {
+
+  
+
+  setTimeout(function() {
+
+      if (boss === 0) { 
+
+        enemy2AttackPos = Random(2, 98);
+
+        $('#enemy2').show();
+
+        $('#enemy2').css('top', '0');
+
+        $('#enemy2').css('left', enemy2AttackPos.toString() + '%');
+
+        $('#enemy2').show();
+
+        $('#enemy2').animate({'top' : '+=' + ($(document).height() - $("#enemy2").height()).toString() + 'px'}, speed);
+
+ 
+
+
+
+
+    setTimeout(function() {
+
+    $('#enemy2').hide();
+
+    }, speed + 10);
+
+      }
+
+    setTimeout(function() {
+
+            enemy2Move();
+
+    }, 3000 + Random(500, 2000));
+
+ 
+
+ }, 100 + Random(100, 300));
+
+    }
+
+   
+
+            function enemy3Move() {
+
+   
+
+   setTimeout(function() {
+
+       if (boss === 0) {
+
+        enemy3AttackPos = Random(2, 98);
+
+        $('#enemy3').show();
+
+        $('#enemy3').css('top', '0');
+
+        $('#enemy3').css('left', enemy3AttackPos.toString() + '%');
+
+        $('#enemy3').show();
+
+        $('#enemy3').animate({'top' : '+=' + ($(document).height() - $("#enemy3").height()).toString() + 'px'}, speed2);
+
+ 
+
+
+
+
+    setTimeout(function() {
+
+    $('#enemy3').hide();
+
+    }, speed2 + 10);
+
+       }
+
+    setTimeout(function() {
+
+            enemy3Move();
+
+    }, speed2 + Random(500, 2000));
+
+ 
+
+  }, Random(100, 300));
+
+    }
+
+   
+
+                function enemy4Move() {
+
+    
+
+    setTimeout(function() {
+
+        if (boss === 0) {
+
+        enemy4AttackPos = Random(2, 98);
+
+        $('#enemy4').show();
+
+        $('#enemy4').css('top', '0');
+
+        $('#enemy4').css('left', enemy4AttackPos.toString() + '%');
+
+        $('#enemy4').show();
+
+        $('#enemy4').animate({'top' : '+=' + ($(document).height() - $("#enemy4").height()).toString() + 'px'}, speed2);
+
+ 
+
+
+
+
+    setTimeout(function() {
+
+    $('#enemy4').hide();
+
+    }, speed2 + 10);
+
+        }
+
+    setTimeout(function() {
+
+            enemy4Move();
+
+    }, speed2 + Random(500, 2000));
+
+ 
+
+  }, Random(100, 300));
+
+    }
+
+   
+
+    function enemy5Move() {
+
+ 
+
+  setTimeout(function() {
+
+        if (points > 74) {
+
+            if (boss === 0) {
+
+        $('#enemy5').css('top', '92%');
+
+        $('#enemy5').css('left', '100%');
+
+        $('#enemy5').show();
+
+        $('#enemy5').animate({'left' : '-=2000px'}, speed3);
+
+            }
+
+        }
+
+        setTimeout(function() {
+
+            enemy5Move();
+
+        }, speed3 + Random(500, 3000));
+
+  
+
+   }, Random(100, 300));
+
+    }
+
+    
+
+       
+
+                function enemy6Move() {
+
+            
+
+    
+
+    setTimeout(function() {
+
+        if (points > 149) {
+
+        if (boss === 0) {
+
+        enemy6AttackPos = Random(2, 98);
+
+        $('#enemy6').show();
+
+        $('#enemy6').css('top', '0');
+
+        $('#enemy6').css('left', enemy6AttackPos.toString() + '%');
+
+        $('#enemy6').show();
+
+        $('#enemy6').animate({'top' : '+=' + (($(document).height() - $("#enemy6").height()) / 2).toString() + 'px'}, speed4);
+
+        enemy6AttackPos = Random(2, 98);
+
+        enemy6AttackInterval = Random(1000, 3000);
+
+        setTimeout(function() {
+
+            $('#enemy6').css('left', enemy6AttackPos.toString() + '%');
+
+            $('#enemy6').animate({'top' : '+=' + (($(document).height() - $("#enemy6").height()) / 2).toString() + 'px'}, speed4);
+
+        }, enemy6AttackInterval);
+
+    setTimeout(function() {
+
+    $('#enemy6').hide();
+
+    }, speed4 * 2 + enemy6AttackInterval);
+
+        }
+
+    }
+
+    setTimeout(function() {
+
+            enemy6Move();
+
+    }, speed4 * 2 + enemy6AttackInterval + Random(500, 2000));
+
+ 
+
+  }, Random(100, 300));
+
+    }
+
+    
+
+                    function enemy7Move() {
+
+    
+
+    setTimeout(function() {
+
+        if (points > 199) {
+
+            if (boss === 0) {
+
+        enemy7AttackPos = Random(2, 98);
+
+        enemy7AttackInterval = Random(1000, 3000);
+
+        $('#warningSign').show();
+
+        $('#warningSign').css('left', enemy7AttackPos.toString() + '%');
+
+        setTimeout(function() {
+
+        
+
+        $('#warningSign').hide();
+
+        $('#enemy7').show();
+
+        $('#enemy7').css('top', '110%');
+
+        $('#enemy7').css('left', enemy7AttackPos.toString() + '%');
+
+        $('#enemy7').show();
+
+        $('#enemy7').animate({'top' : '-=300px'}, 650);
+
+        setTimeout(function() {
+
+        $('#enemy7').animate({'top' : '+=300px'}, 650);
+
+        }, 700);
+
+ 
+
+        }, enemy7AttackInterval);
+
+            }
+
+    setTimeout(function() {
+
+    $('#enemy7').hide();
+
+    }, 1300);
+
+        }
+
+    setTimeout(function() {
+
+            enemy7Move();
+
+    }, 1300 + enemy7AttackInterval + Random(500, 2000));
+
+        
+
+  }, Random(100, 300));
+
+    }
+   function heartMove() {
+
+ 
+
+  setTimeout(function() {
+
+      if (boss === 0) {
+
+        heartAttackPos = Random(2, 98);
+
+        $('#heart').show();
+
+        $('#heart').css('top', '0');
+
+        $('#heart').css('left', heartAttackPos.toString() + '%');
+
+        $('#heart').show();
+
+        $('#heart').animate({'top' : '+=' + ($(document).height() - $("#enemy1").height()).toString() + 'px'}, 3000);
+
+ 
+
+
+
+
+    setTimeout(function() {
+
+    $('#heart').hide();
+
+    }, 3010);
+
+      }
+
+    setTimeout(function() {
+
+            heartMove();
+
+    }, 3000 + Random(500, 2000));
+
+ 
+
+ }, 100 + Random(100, 300));
+
+    }
+
+ var colors = ['red', 'crimson', 'green', 'blue', 'aqua', 'olive', 'aquamarine', 'teal', 'salmon', 'pink', 'purple', 'black', 'brown', 'silver', 'deepPink', 'darkGoldenRod', 'tomato', 'ghostwhite', 'khaki', 'cyan', 'firebrick', 'yellow', 'lime', 'magenta', 'maroon', 'fuchsia', 'gray', 'indigo', 'lightSteelBlue', 'yellowGreen', 'mediumSlateBlue', 'lightCoral', 'coral', 'lightSeaGreen', 'gold', 'orange'];
+
+ 
+
+    function start() {
+
+if (stg === 0) {
+
+stg++;
+
+}
+
+$('#stb').html('<button id="stb" onclick="realStart()">Start the game!</button>');
+
+$('#colorpara').html('<p id="colorpara">Choose your shape!</p>');
+
+$('#colorpara').css('width', '100px');
+
+$('#colorpara').css('top', '33%');
+
+    }
+
+ 
+
+function realStart() {
+
+stg++;
+
+$('#stb').hide();
+
+$('#colorpara').hide();
+
+$('#main').css('top', '88%');
+
+$('#arrow').hide();
+
+$('#back').hide();
+
+$('#colorname').hide();
+
+$("#emb").hide();
+
+$('#pointpara').show();
+
+$('#pointsnumb').show();
+
+$('#livespara').show();
+
+$('#livesnumb').show();
+
+enemyMove();
+
+enemy2Move();
+
+enemy3Move();
+
+enemy4Move();
+
+enemy5Move();
+
+enemy6Move();
+
+enemy7Move();
+
+heartMove();
+
+}
+
+$(document).keydown(function (e) {
+
+key = e.keyCode;
+
+switch (key) {
+
+    case 39 :
+
+        if (stg === 2) {
+
+        e.preventDefault();
+
+        $('#main').offset({left: $("#main").offset().left+15, top: $("#main").offset().top});
+
+  
+
+  facing = "right";
+
+        }
+
+    break;
+
+     
+
+    case 37:
+
+        if(stg === 2) {
+
+        e.preventDefault();
+
+        $('#main').offset({left: $("#main").offset().left-15, top: $("#main").offset().top});
+
+  
+
+  facing = "left";
+
+        }
+
+    break;
+
+ 
+
+ case 38:
+
+  if (stg === 2) {
+
+   if (!bJumping) {
+
+    bJumping = true;
+
+    setTimeout(function () {bJumping = false;}, 1350);
+
+    $('#main').animate({'top' : '-=150px'}, 650);
+
+    setTimeout(function() {
+
+     $('#main').animate({'top' : '+=150px'}, 650);
+
+    }, 700);
+
+   }
+
+  }
+
+ break;
+
+}
+
+});
+
+ 
+
+$('#arrow').click(function() {
+
+if (stg === 0) {
+
+if (arrayNumber === 35) {
+
+arrayNumber = 0;
+
+} else {
+
+arrayNumber++;
+
+}
+
+} else if (stg === 1) {
+
+    if (maintype === 1) {
+
+        $('#main').css('-moz-border-radius', '50px');
+
+        $('#main').css('-webkit-border-radius', '50px');
+
+        $('#main').css('border-radius', '50px');
+
+        maintype = 0;
+
+    } else {
+
+        $('#main').css('-moz-border-radius', '0px');
+
+        $('#main').css('-webkit-border-radius', '0px');
+
+        $('#main').css('border-radius', '0px');
+
+        maintype = 1;
+
+    }
+
+}
+
+});
+
+ 
+
+$('#back').click(function() {
+
+if (stg === 0) {
+
+if (arrayNumber === 0) {
+
+arrayNumber = 35;
+
+} else {
+
+arrayNumber--;
+
+}
+
+} else if (stg === 1) {
+
+    if (maintype === 1) {
+
+        $('#main').css('-moz-border-radius', '50px');
+
+        $('#main').css('-webkit-border-radius', '50px');
+
+        $('#main').css('border-radius', '50px');
+
+        maintype = 0;
+
+    } else if (maintype === 0) {
+
+        $('#main').css('-moz-border-radius', '0px');
+
+        $('#main').css('-webkit-border-radius', '0px');
+
+        $('#main').css('border-radius', '0px');
+
+        maintype = 1;
+
+    }
+
+}
+
+});
+
+ 
+
+setInterval(function() {
+
+$('#main').css('background-color', colors[arrayNumber]);
+
+$('#colorname').css('color', colors[arrayNumber]);
+
+$('#colorname').html(colors[arrayNumber]);
+
+}, 10);
+
+ 
+
+setInterval(function() {
+
+mainpos = $('#main').offset();
+
+enemypos = $('#enemy1').offset();
+
+mainleft = mainpos.left;
+
+maintop = mainpos.top;
+
+enemy1left = enemypos.left;
+
+enemy1top = enemypos.top;
+
+}, 10);
+
+setInterval(function() {
+
+  for(var i = 0;i < 13; i++) {
+
+   if (mainleft  + 100 > $("#enemy" + (i+1).toString()).offset().left){
+
+    if (mainleft < $("#enemy" + (i+1).toString()).offset().left + $("#enemy" + (i+1).toString()).width() )  {
+
+console.log("Too True");
+
+     if (maintop < $("#enemy" + (i+1).toString()).offset().top + $("#enemy" + (i+1).toString()).height() ) {
+
+console.log('So True');
+
+if (maintop + 100 > $("#enemy" + (i+1).toString()).offset().top) { 
+
+ if (lives > 1) {
+
+ $('#enemy' + (i+1).toString()).hide();
+
+ lives--;
+
+ } else if (lives = 1) {
+
+$('#main').fadeOut('2000');
+
+lives = 0;
+
+dead = 1;
+
+$('#pointsnumb').css('color', 'Crimson');
+
+$('#pointsnumb').html('Your final score was: ' + (points).toString());   
+
+$('#pointpara').hide();
+
+$('#pointsnumb').css('width', '100px');
+
+$('#pointsnumb').css('height', '75px');
+
+} else {
+
+ null
+
+ }
+
+}
+
+     }
+
+    }
+
+   }
+
+  }
+
+ }, 15);
+
+ 
+
+setInterval(function() {
+
+if (dead === 0) {
+
+if (stg === 2) {
+
+points++;
+
+$('#pointsnumb').html(points);
+
+}
+
+}
+
+}, 1000);
+
+setInterval(function() {
+
+   if (points < 49) {
+
+       if (points > 24) {
+
+           $('#enemy1').css('width', '65px');
+
+           $('#enemy1').css('height', '65px');
+
+           $('#enemy2').css('width', '65px');
+
+           $('#enemy2').css('height', '65px');
+
+           $('#enemy3').css('width', '65px');
+
+           $('#enemy3').css('height', '65px');
+
+           $('#enemy4').css('width', '65px');
+
+           $('#enemy4').css('height', '65px');
+
+           $('#enemy6').css('width', '65px');
+
+           $('#enemy6').css('height', '65px');
+
+       }
+
+   } else if (points > 49) {
+
+           $('#enemy1').css('width', '80px');
+
+           $('#enemy1').css('height', '80px');
+
+           $('#enemy2').css('width', '80px');
+
+           $('#enemy2').css('height', '80px');
+
+           $('#enemy3').css('width', '80px');
+
+           $('#enemy3').css('height', '80px');
+
+           $('#enemy4').css('width', '80px');
+
+           $('#enemy4').css('height', '80px');
+
+           $('#enemy6').css('width', '80px');
+
+           $('#enemy6').css('height', '80px');
+
+   }
+
+   
+
+}, 15);
+
+setInterval(function() {
+
+ $('#livesnumb').html(lives);
+
+ }, 15);
+
+ 
+
+ setInterval(function() {
+
+ if (points < 100) {
+
+ if (points > 49) {
+
+  speed = 2000;
+
+  $('#enemy1').css('background-color', 'orange');
+
+  $('#enemy2').css('background-color', 'orange');
+
+ }
+
+ } else if (points > 99) {
+
+   speed = 1500;
+
+   speed2 = 2000;
+
+  $('#enemy1').css('background-color', 'red');
+
+  $('#enemy2').css('background-color', 'red');
+
+  $('#enemy3').css('background-color', 'orange');
+
+  $('#enemy4').css('background-color', 'orange');
+
+ }
+
+ }, 15);
+
+ setInterval(function() {
+
+ if (easymode === 1) {
+
+ if (dead === 0) {
+
+if (lives < 5) {
+
+lives++;
+
+}
+
+ }
+
+ }
+
+ }, 7500);
+
+
+
+
+    setInterval(function() {
+
+        if (points > 124) {
+
+            $('#enemy5').css('background-color', 'blue');
+
+            speed3 = 2750;
+
+        }
+
+    }, 15);
+
+    
+
+    setInterval(function() {
+
+        if (points > 174) {
+
+            speed4 = 1000;
+
+            $('#enemy6').css('background-color', 'olive');
+
+        }
+
+    }, 15);
+
+    
+
+    setInterval(function() {
+
+        if (points > 249) {
+
+            if (boss_started === 0) {
+
+            boss_started = 1;
+
+            boss = 1;
+
+            }
+
+        }
+
+    }, 15);
+
+    
+
+    setInterval(function() {
+
+        if (points > 99) {
+
+            if (points < 200) {
+
+        $('body').css('background-image', 'url("https://astroengine.files.wordpress.com/2011/04/extra_solar_planet.jpg")');
+
+            } else if (points > 199) {
+
+        $('body').css('background-image', 'url("http://lbc9.net/space/planets/mars/realistic-mars-widescreen-1920x1080.jpg")');
+
+            }
+
+        }
+
+    }, 15);
+
+
+setInterval(function() {
+if (mainleft < heartleft + $('#heart').width()) {
+if (heartleft > mainleft + 100) {
+if (maintop < hearttop + $('#heart').height() ) {
+if(maintop + 100 > hearttop) {
+$('#heart').hide();
+if (lives < 5) {
+lives++;
+}
+}
+}
+}
+}
+}, 15);
+  </script>
+
+</html>
